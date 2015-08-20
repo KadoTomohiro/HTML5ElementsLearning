@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Scoped</title>
+  <style media="screen">
+    section{
+      margin-left:30px;
+    }
+    pre{
+      background-color: rgb(221, 221, 221);
+      width: 300px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>親スコープ</h1>
+  <p>
+    ここは黒の予定
+  </p>
+  <section>
+    <h1>兄スコープ</h1>
+    <p>ここは黒の予定</p>
+  </section>
+  <section>
+    <style scoped>
+      p{
+        color:red;
+      }
+    </style>
+    <h1>字を赤くする</h1>
+    <p>
+      ここだけ赤くなります
+      <pre>
+        <code>
+
+  p{
+    color:red;
+  }
+        </code>
+      </pre>
+    </p>
+    <section>
+      <h1>子スコープ</h1>
+      <p>
+        ここは赤くなる？
+      </p>
+    </section>
+    <section>
+      <style scoped>
+        p{
+          color:blue;
+        }
+      </style>
+      <h1>子スコープ2</h1>
+      <p>
+        ここは青くなる？
+        <pre>
+          <code>
+
+  p{
+    color:blue;
+  }
+          </code>
+        </pre>
+      </p>
+    </section>
+
+  </section>
+  <section>
+    <h1>弟スコープ</h1>
+    <p>ここも黒の予定</p>
+  </section>
+</body>
+</html>
